@@ -3,7 +3,7 @@ db.dropDatabase
 
 db.marine_info.insertMany([
     {
-        category:"byCatch",
+        category:"Marine Life",
         name:"Green Sea Turtle",
         description:"The Green Sea Turtle has an appearance of a typical turtle. They have a beaked head at the end of a short neck, and paddle-like arms well-adapted for swimming. An adult Green Sea Turtle normally grows to about 1.5 metres and on average weighs between 68-190kg. As the name suggests the Green Sea Turtle has a green colour.",
         threats:"Human action presents both intentional and unintentional threats to the species’ survival. Intentional threats include continued hunting, poaching and egg harvesting. The main unitentional threat comes from pollution and habitat destruction",
@@ -34,7 +34,7 @@ db.marine_info.insertMany([
         ]
     },
     {
-        category:"byCatch",
+        category:"Marine Life",
         name:"Blue Whale",
         description:"The Blue Whale is widely known for being the largest known animal. The longest recorded Blue Whale was measured to be 30 metres in comparison to the average length of 22 metres. Blue Whales tend to weigh around 100 tonnes!. The diet of a Blue Whale consists of almost exclusively Krill",
         threats:"The population of Blue Whale has decreased drastically in the last 100 years from 140,000 to 10,000-25,000, this is mainly due to whaling in the early 20th century. The biggest mordern threat that Blue Whales face is Ship Strikes",
@@ -65,7 +65,7 @@ db.marine_info.insertMany([
         ]
     },
     {
-        category:"byCatch",
+        category:"Marine Life",
         name:"Stygobromus hayi",
         description:"Stygobromus hayi is a rare type of crustcean which lives in the District of Columbia, United States of America. The Stygobromus hayi live underground and so they are white in colour and do not have any eyes. On average they are measured to be around 10 millimetres in length",
         threats:"This species is under threat due to recent degradation of their natural habit. This has been caused by heavy metals and other pollutants such as oil and sewage leaks",
@@ -96,7 +96,7 @@ db.marine_info.insertMany([
         ]
     },
     {
-        category:"byCatch",
+        category:"Marine Life",
         name:"Stellar Sea Lion",
         description:"Stellar Sea Lions are often found in the north pacific. Adult members of the species are of a pale yellow/tawny colour whereas the pups are black. The average Stellar Sea Lion grows to around 2.3-2.9 metres in length and can weigh around 544kg.",
         threats:"The Stellar Sea Lion population decline was suspected to be attributed to overfishing in the Gulf of Alaksa. This is suspected because of the animals change in diet from fatty herring to leaner fish such as pollock which reduced their ability to consume and store fat",
@@ -127,7 +127,7 @@ db.marine_info.insertMany([
         ]
     },
     {
-        category:"byCatch",
+        category:"Marine Life",
         name:"Hammerhead Shark",
         description:"Hammerhead sharks are a group of sharks from the Sphyrnidae family and are most known for their uniquily shaped head which resmebles the shape of a hammer. The species can range from 0.9-6 metres in length and on average weigh 323kg. Hammerhead skarks are normally a greenish colour with a white underbelly.",
         threats:"Humans are classed to be the number one threat to Hammerhead sharks. This is due to them being accidentily caught in fisheries all across the world. Hammerhead sharks are considered to have some of the best quality fins and so are often captured to have their fins removed.",
