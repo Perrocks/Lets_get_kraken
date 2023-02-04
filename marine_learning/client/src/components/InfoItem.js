@@ -1,9 +1,18 @@
 import React from 'react'
 
-const InfoItem = () => {
+const InfoItem = ({item}) => {
+
 
     return (
-        <h1>"I'm the info item!!"</h1>
+        <li>
+            <p>Category:{item.category} </p>
+            <p>Name:{item.name} </p>
+            <p>Description:{item.description} </p>
+            {item.category==="Pollutants" ? <p>Solutions:{item.threats}</p> : <p>Threats:{item.threats} </p>}
+            <p>Examples:{item.examples} </p>
+            <p>Picture: </p>
+            <p>Further reading: </p>
+        </li>
     )
 }
 

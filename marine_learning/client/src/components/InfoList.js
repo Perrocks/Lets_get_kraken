@@ -1,10 +1,15 @@
 import React from 'react'
 import InfoItem from './InfoItem'
 
-const InfoList = () => {
+const InfoList = ({listOfMarineInfo}) => {
+    const mappedMarineInfo = listOfMarineInfo.map((item) => {
+        return <InfoItem item = {item} key = {item._id}/>
 
+    })
     return (
-        <InfoItem></InfoItem>
+        <ul>
+            {mappedMarineInfo}
+        </ul>
     )
 }
 
