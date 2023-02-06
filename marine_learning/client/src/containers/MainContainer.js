@@ -9,42 +9,38 @@ import HomePage from '../components/HomePage'
 const MainContainer = () => {
 
 const[listOfMarineInfo, setListOfMarineInfo] = useState([])
-const [tickedCount, setTickedCount] = useState(0)
+const [filterCount, setFilterCount] = useState ([])
 
 useEffect(() => {
     getMarineInfo()
     .then((allMarineInfo) =>{
         setListOfMarineInfo(allMarineInfo)
+        setFilterCount(allMarineInfo.filter(item => item.isChecked === true))
     })
 }, [])
 
 const changeCounter = (isChecked, item) => {
-    console.log(tickedCount)
-    let checkedCount = tickedCount
-    if (isChecked){
-        checkedCount = checkedCount + 1
-    }
-    else {
-        checkedCount = checkedCount - 1
-    }
-    setTickedCount(checkedCount)
     updateOneMarineItem(item)
     const updateItemIndex = listOfMarineInfo.findIndex(marineItem => marineItem._id === item._id)
     const updateMarineInfo = [...listOfMarineInfo]
     updateMarineInfo [updateItemIndex] = item
     setListOfMarineInfo(updateMarineInfo)
+    const listOfFilteredInfo = updateMarineInfo.filter(item => item.isChecked === true)
+    setFilterCount(listOfFilteredInfo)
 }
 
 
 
     return (
         <Router>
+            {console.log(filterCount)}
             <NavBar/>
             <Routes>
                 <Route exact path='/' element={<HomePage/>}/>
-                <Route path='/modules' exact element={<InfoList listOfMarineInfo = {listOfMarineInfo} changeCounter={changeCounter}/>}/>
+                <Route path='/modules' exact element={<InfoList listOfMarineInfo = {listOfMarineInfo} changeCounter={changeCounter} />}/>
                 <Route path='/quizz' element={<Quizz/>}/>
             </Routes>
+            {filterCount.length === 20 ? <a href='/quizz'>Test your knowledge!</a> : <p>Read all the info to unlock the quiz...!</p>}
         </Router>
     )
 }
