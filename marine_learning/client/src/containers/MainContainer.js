@@ -9,6 +9,7 @@ import HomePage from '../components/HomePage'
 const MainContainer = () => {
 
 const[listOfMarineInfo, setListOfMarineInfo] = useState([])
+const [tickedCount, setTickedCount] = useState(0)
 
 useEffect(() => {
     getMarineInfo()
@@ -17,6 +18,17 @@ useEffect(() => {
     })
 }, [])
 
+const changeCounter = (isChecked) => {
+    let checkedCount = tickedCount
+    if (isChecked){
+        checkedCount = checkedCount + 1
+    }
+    else {
+        checkedCount = checkedCount - 1
+    }
+    setTickedCount(checkedCount)
+    console.log(tickedCount)
+}
 
 
 
@@ -25,7 +37,7 @@ useEffect(() => {
             <NavBar/>
             <Routes>
                 <Route exact path='/' element={<HomePage/>}/>
-                <Route path='/modules' exact element={<InfoList listOfMarineInfo = {listOfMarineInfo}/>}/>
+                <Route path='/modules' exact element={<InfoList listOfMarineInfo = {listOfMarineInfo} changeCounter={changeCounter}/>}/>
                 <Route path='/quizz' element={<Quizz/>}/>
             </Routes>
         </Router>

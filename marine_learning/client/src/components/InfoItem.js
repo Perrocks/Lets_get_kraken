@@ -1,7 +1,11 @@
 import React from 'react'
 
-const InfoItem = ({item}) => {
+const InfoItem = ({item, changeCounter}) => {
 
+    const handleChange = (evt) => {
+        const isChecked = evt.target.checked
+        changeCounter(isChecked)
+    }
 
     return (
         <li>
@@ -12,6 +16,10 @@ const InfoItem = ({item}) => {
             <p>Examples:{item.examples} </p>
             <p>Picture: </p>
             <p>Further reading: </p>
+            <div>
+                <input type="checkbox" id='checkbox' name='checkbox' onChange={handleChange}/>
+                <label htmlFor='checkbox'>Done!</label>
+            </div>
         </li>
     )
 }
