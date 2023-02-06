@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom' 
 import InfoList from '../components/InfoList'
-import { getMarineInfo, getOneMarineItem } from '../components/MarineService'
+import { getMarineInfo, getOneMarineItem, updateOneMarineItem } from '../components/MarineService'
 import NavBar from '../components/NavBar'
 import Quizz from '../components/Quizz'
 import HomePage from '../components/HomePage'
@@ -18,7 +18,8 @@ useEffect(() => {
     })
 }, [])
 
-const changeCounter = (isChecked) => {
+const changeCounter = (isChecked, item) => {
+    console.log(tickedCount)
     let checkedCount = tickedCount
     if (isChecked){
         checkedCount = checkedCount + 1
@@ -27,7 +28,11 @@ const changeCounter = (isChecked) => {
         checkedCount = checkedCount - 1
     }
     setTickedCount(checkedCount)
-    console.log(tickedCount)
+    updateOneMarineItem(item)
+    const updateItemIndex = listOfMarineInfo.findIndex(marineItem => marineItem._id === item._id)
+    const updateMarineInfo = [...listOfMarineInfo]
+    updateMarineInfo [updateItemIndex] = item
+    setListOfMarineInfo(updateMarineInfo)
 }
 
 

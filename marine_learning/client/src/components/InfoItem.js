@@ -5,7 +5,18 @@ const InfoItem = ({item, changeCounter}) => {
     const handleChange = (evt) => {
         let checkedItem = item.isChecked
         checkedItem = evt.target.checked
-        changeCounter(checkedItem, item)
+        changeCounter(checkedItem, {
+            _id: item._id,
+            category: item.category,
+            name: item.name,
+            description: item.description,
+            threats: item.threats,
+            examples: item.examples,
+            picture: item.picture,
+            url: item.url,
+            isChecked: checkedItem,
+            questions: item.questions
+        })
     }
 
     return (
