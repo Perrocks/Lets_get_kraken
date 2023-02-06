@@ -10,6 +10,7 @@ db.marine_info.insertMany([
         examples:"Atlantic, Pacific, and Indian Oceans",
         picture:"https://www.cleanpng.com/png-belize-barrier-reef-hol-chan-marine-reserve-turtle-77969/",
         url:"https://www.worldwildlife.org/species/green-turtle",
+        isChecked: false,
         questions:[
             {
                 question:"One of the main threats to the Green Sea Turtle is egg harvesting",
@@ -41,6 +42,7 @@ db.marine_info.insertMany([
         examples:"Can be found in all oceans except the Artic",
         picture:"https://www.cleanpng.com/png-common-bottlenose-dolphin-blue-whale-wholphin-tucu-1540352/",
         url:"https://www.worldwildlife.org/species/blue-whale",
+        isChecked: false,
         questions:[
             {
                 question:"The Blue Whale is the largest animal on the planet",
@@ -72,6 +74,7 @@ db.marine_info.insertMany([
         examples:"District of Columbia",
         picture:"https://inaturalist.lu/taxa/92288-Stygobromus",
         url:"https://www.fws.gov/species/hays-spring-amphipod-stygobromus-hayi",
+        isChecked: false,
         questions:[
             {
                 question:"The Stygobromus hayi have got great eyesight",
@@ -103,6 +106,7 @@ db.marine_info.insertMany([
         examples:"Northern Hokkaido,Southern coast of Alaska",
         picture:"https://www.pngegg.com/en/png-yytlb",
         url:"https://www.nationalgeographic.com/animals/mammals/facts/steller-sea-lion",
+        isChecked: false,
         questions:[
             {
                 question:"Stellar Sea Lions are herbivores",
@@ -134,6 +138,7 @@ db.marine_info.insertMany([
         examples:"Atlantic, Indian and Pacific oceans",
         picture:"https://www.pngegg.com/en/search?q=hammerhead+shark",
         url:"https://www.nationalgeographic.com/animals/fish/facts/hammerhead-sharks",
+        isChecked: false,
         questions:[
             {
                 question:"Hammerhead sharks belong to the Heterodontiformes family of sharks",
@@ -166,6 +171,7 @@ db.marine_info.insertMany([
         examples:"The Great Barrier Reef",
         picture:"https://enviearth.com/wp-content/uploads/2020/03/coral-reef-environment.jpg",
         url:"https://www.natgeokids.com/uk/discover/geography/general-geography/coral-reef-facts/",
+        isChecked: false,
         questions:[
             {
                 question: "Coral reefs are known as the 'rainforests of the sea'",
@@ -199,6 +205,7 @@ db.marine_info.insertMany([
         examples:"Corals forming a coral structure in a coral reef",
         picture:"https://storymaps.arcgis.com/02773ee8-566e-4483-8bc9-c0c9846b0210",
         url:"https://www.dkfindout.com/us/animals-and-nature/invertebrates/corals/",
+        isChecked: false,
         questions:[
             {
                 question: "Corals are living organisms",
@@ -231,6 +238,7 @@ db.marine_info.insertMany([
         examples:"2 / 3 of the Great Barrier Reef are bleached",
         picture:"https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1240w,f_auto,q_auto:best/newscms/2020_11/2596211/181008-coral-reef-climate-mc-955.JPG",
         url:"https://climatekids.nasa.gov/coral-bleaching/",
+        isChecked: false,
         questions:[
             {
                 question: "Two causes of bleaching in corals are: an increase on water temperature beyond a coral's comfortable range, and ocean acidification",
@@ -263,6 +271,7 @@ db.marine_info.insertMany([
         examples:"A team of coral gardeners working on a Super Coral nursery in the Polynesia",
         picture:"https://cdn.shopify.com/s/files/1/0505/4663/9015/products/21.jpg?v=1650578762&width=832",
         url:"https://coralgardeners.org/products/adopt-a-coral",
+        isChecked: false,
         questions:[
             {
                 question: "Super Corals are those corals who can survive bleaching",
@@ -295,6 +304,7 @@ db.marine_info.insertMany([
         examples:"Great Barrier Reef seen from space!",
         picture:"https://fh-sites.imgix.net/sites/4084/2020/04/21015152/vlcsnap-2012-08-02-14h11m16s99-Large.png?auto=compress%2Cformat&w=1000&h=1000&fit=max",
         url:"https://youtu.be/wbNeIn3vVKM",
+        isChecked: false,
         questions:[
             {
                 question: "The Great Barrier Reef it’s so large that it can be seen from space",
@@ -328,6 +338,7 @@ db.marine_info.insertMany([
         examples:"Nurdles are a kind of microplastic. They are tiny pellets that are melted down and used to make bigger plastic products. You can find them on almost all British beaches. Click the link below to see how you can help reduce microplastic pollution by taking part in the Great Nurdle Hunt!",
         picture:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRflhXID_VPO1OSfgT_VegC2DXiwWZdrrxnyQ&usqp=CAU",
         url:"https://www.nurdlehunt.org.uk/take-part.html",
+        isChecked: false,
         questions:[
             {
                 question: "Microplastics are very hard to see because of their tiny size",
@@ -360,6 +371,7 @@ db.marine_info.insertMany([
         examples:"The Great Pacific Garbage Patch is the biggest area of marine plastic, but it's not the only one. There are four huge garbage patches in our oceans, located around the world",
         picture:"https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTNF2Ep4uo03i5Hs24l3P76BlgrS3GmronJ2qkcslVDXz9xrJbm",
         url:"https://theoceancleanup.com/great-pacific-garbage-patch/",
+        isChecked: false,
         questions:[
             {
                 question: "The Great Pacific Garbage Patch is the same size as France",
@@ -392,6 +404,7 @@ db.marine_info.insertMany([
         examples:"There are around 60,000 big tankers in our oceans, as well as fishing boats, underwater drilling for oil and gas going on, building work along coastlines, and human scientific surveys. That's a lot of traffic making a lot of noise!",
         picture:"https://images.squarespace-cdn.com/content/v1/57e01ea36b8f5b62f6667771/1549563549366-L2KFXBI0GAUPD7O1NNI8/noise+pollution+-+callie+wohlgemuth.jpg?format=1000w",
         url:"https://oceanservice.noaa.gov/facts/ocean-noise.html",
+        isChecked: false,
         questions:[
             {
                 question: "Animals that use sound to communicate are harmed by noise pollution",
@@ -424,6 +437,7 @@ db.marine_info.insertMany([
         examples:"Half of the The Great Barrier Reef has been very badly bleached already. Lots of other reefs in Polynesia have also suffered, as well as all over the world",
         picture:"https://earimediaprodweb.azurewebsites.net/Api/v1/Multimedia/d51c2b11-36d8-463f-8bc2-48ad502565a9/Rendition/low-res/Content/Public",
         url:"https://ocean.si.edu/ocean-life/invertebrates/ocean-acidification",
+        isChecked: false,
         questions:[
             {
                 question: "Burning fossil fuels will help reduce ocean acidification",
@@ -456,6 +470,7 @@ db.marine_info.insertMany([
         examples:"The most common types of chemical pollutants are fertilisers and pesticides used in farming, industrial chemicals used to make anything from computers to medicines, and sewage. Things like oil spills at sea can happen too, causing huge and lasting environmental damage",
         picture:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuRIBT9p0MFh3Zc-SN-lw2CU0cEwMZjxFNcg&usqp=CAU",
         url:"https://ypte.org.uk/factsheets/sea-pollution/chemical-pollution",
+        isChecked: false,
         questions:[
             {
                 question: "Chemical pollution often happens when chemicals are swept into the sea by the rain",
@@ -488,6 +503,7 @@ db.marine_info.insertMany([
         examples:"Macrocystis, Laminaria, Ecklonia",
         picture:"https://www.worldatlas.com/r/w960-q80/upload/c6/11/09/shutterstock-1331702939.jpg",
         url:"",
+        isChecked: false,
         questions:[
             {
                 question: "Many species make nurseries in kelp forests",
@@ -520,6 +536,7 @@ db.marine_info.insertMany([
         examples:"Anomiidae, Dimyidae, Ostreidae",
         picture:"https://climatebreak.org/wp-content/uploads/2022/08/JonathanWilker_PerdueUniversity.jpeg",
         url:"",
+        isChecked: false,
         questions:[
             {
                 question: "Oyster reefs work like 'vacuum cleaners' by filtering particles in water",
@@ -552,6 +569,7 @@ db.marine_info.insertMany([
         examples:"Eelgrass, Turtles grass, Tape grass",
         picture:"https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/8/2022/10/CLI362.seagrass_meadows.naturepl_01688673-920x684.jpg",
         url:"",
+        isChecked: false,
         questions:[
             {
                 question: "Seagrass meadows are only found in Antarctica.",
@@ -584,6 +602,7 @@ db.marine_info.insertMany([
         examples:"Plankton, whales, dolphins",
         picture:"https://pelagiczone.weebly.com/uploads/1/7/5/0/17509203/7405509.jpg?725",
         url:"",
+        isChecked: false,
         questions:[
             {
                 question: "There is no light in the epipelagic zone.",
@@ -616,6 +635,7 @@ db.marine_info.insertMany([
         examples:"Caulophrynidae, Colossal squid",
         picture:"https://miro.medium.com/max/1400/1*fR_XTlyViYuDpSnvoGkGYw.webp",
         url:"",
+        isChecked: false,
         questions:[
             {
                 question: "The abbysopelagic zone is pitch black and many species living here are blind..",
