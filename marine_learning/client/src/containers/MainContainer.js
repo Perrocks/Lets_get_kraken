@@ -32,16 +32,18 @@ const changeCounter = (isChecked, item) => {
 
 
     return (
-        <Router>
-            {console.log(filterCount)}
-            <NavBar/>
-            <Routes>
-                <Route exact path='/' element={<HomePage/>}/>
-                <Route path='/modules' exact element={<InfoList listOfMarineInfo = {listOfMarineInfo} changeCounter={changeCounter} />}/>
-                <Route path='/quizz' element={<Quizz/>}/>
-            </Routes>
-            {filterCount.length === 20 ? <a href='/quizz'>Test your knowledge!</a> : <p>Read all the info to unlock the quiz...!</p>}
-        </Router>
+        <>
+            <Router>
+                {console.log(filterCount)}
+                <NavBar/>
+                <Routes>
+                    <Route exact path='/' element={<HomePage/>}/>
+                    <Route path='/modules' exact element={<InfoList listOfMarineInfo = {listOfMarineInfo} changeCounter={changeCounter} filterCount={filterCount}/>}/>
+                    <Route path='/quizz' element={<Quizz listOfMarineInfo={listOfMarineInfo}/>}/>
+                </Routes>
+                
+            </Router>
+        </>
     )
 }
 
