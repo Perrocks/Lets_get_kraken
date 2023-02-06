@@ -56,17 +56,37 @@ const createRouter = function (collection) {
   });
 
   router.put('/:id', (req, res) =>{
+    // const thing = new Thing ({
+    //   _id: req.params.id,
+    //   body: req.body,
+    // })
     const id = req.params.id;
     const newData = req.body
     collection
-        .updateOne({_id: ObjectID(id) })
+    // Thing.updateOne({_id: req.params.id}, thing)
+        .updateOne({_id: ObjectID(id)}, {$set:newData})
         .then(result => res.json(result))
         .catch((err) => {
             console.error(err);
             res.status(500);
             res.json({ status: 500, error: err });
-         });
-     })
+        });
+    })
+
+    // app.put('/api/stuff/:id', (req, res, next) => {
+    //   const thing = new Thing({
+    //     _id: req.params.id,
+    //     title: req.body.title,
+    //     description: req.body.description,
+    //     imageUrl: req.body.imageUrl,
+    //     price: req.body.price,
+    //     userId: req.body.userId
+    //   });
+    //   Thing.updateOne({_id: req.params.id}, thing).then(
+
+
+
+
 
   return router;
 };

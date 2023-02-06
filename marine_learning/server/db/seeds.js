@@ -1,5 +1,5 @@
 use marine_database
-db.dropDatabase
+db.dropDatabase()
 
 db.marine_info.insertMany([
     {
