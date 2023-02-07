@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom' 
 import InfoList from '../components/InfoList'
 import { getMarineInfo, getOneMarineItem, updateOneMarineItem } from '../components/MarineService'
+import { getScoreData, updateScore } from '../components/QuizzService'
 import NavBar from '../components/NavBar'
 import Quizz from '../components/Quizz'
 import HomePage from '../components/HomePage'
@@ -9,6 +10,7 @@ import HomePage from '../components/HomePage'
 const MainContainer = () => {
 
 const[listOfMarineInfo, setListOfMarineInfo] = useState([])
+const[listOfScoreData,setScoreData]=useState([])
 const [filterCount, setFilterCount] = useState ([])
 
 useEffect(() => {
@@ -16,6 +18,10 @@ useEffect(() => {
     .then((allMarineInfo) =>{
         setListOfMarineInfo(allMarineInfo)
         setFilterCount(allMarineInfo.filter(item => item.isChecked === true))
+    getScoreData()
+    .then(allScoreData)=>{
+        
+    }
     })
 }, [])
 

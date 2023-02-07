@@ -12,8 +12,10 @@ MongoClient.connect("mongodb://127.0.0.1:27017", {useUnifiedTopology: true})
     const db = client.db("marine_database")
     const marineCollection = db.collection("marine_info")
     const marineRouter = createRouter(marineCollection)
-
     app.use("/api/marine_info", marineRouter)
+    const scoreCollection=db.collection('quizz_score')
+    const scoreRouter=createRouter(scoreCollection)
+    app.use("/api/quizz_score",scoreRouter)
 })
 .catch (console.error)
 
