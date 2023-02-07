@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import Scores from './Scores'
 
-const Quizz = ({listOfMarineInfo}) => {
-
+const Quizz = ({listOfMarineInfo,listOfScoreData,updateCurrentScore}) => {
+    console.log("score data",listOfScoreData)
 
     const handleClick=(currentQuestion,val)=>{
         console.log("this is the current quest ",currentQuestion)
@@ -15,16 +15,32 @@ const Quizz = ({listOfMarineInfo}) => {
         }
         if(currentQuestion.correct_answer===buttonValue){
             //increment score
-            console.log("gets to here")
+            // console.log("djasidfaisfb",listOfScoreData[0])
+            const newWins=listOfScoreData[0].wins +1
+            const newTotalPlayed=listOfScoreData[0].total_played+1
+            updateCurrentScore({
+                _id:listOfScoreData[0]._id,
+                wins:newWins,
+                losses:listOfScoreData[0].losses,
+                total_played:newTotalPlayed
+            })
+            // console.log("gets to here")
             return(
                 // <p>Congrats</p>
                 alert("Congrats")
             )
         }
         else{
-            console.log("gets to here fasle")
+            const newLosses=listOfScoreData[0].losses +1
+            const newTotalPlayed=listOfScoreData[0].total_played+1
+            updateCurrentScore({
+                _id:listOfScoreData[0]._id,
+                wins:listOfScoreData[0].wins,
+                losses:newLosses,
+                total_played:newTotalPlayed
+            })
             return(
-                alert("")
+                alert("You got this wrong, are you sure you read the information?")
                 // <p>You got this wrong, are you sure you read the information?</p>
             )
         }
@@ -48,10 +64,17 @@ const Quizz = ({listOfMarineInfo}) => {
         )
     })
 
+
     return (
-        <ul>
-            {eachQuestion}
-        </ul>
+        <section>
+            <ul>
+                {eachQuestion}
+            </ul>
+            <div>
+                {listOfScoreData.length && <Scores listOfScoreData={listOfScoreData}/>}
+            </div>
+        </section>
+
     )
 }
 
