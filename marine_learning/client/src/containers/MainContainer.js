@@ -13,8 +13,11 @@ const MainContainer = () => {
     const[listOfMarineInfo, setListOfMarineInfo] = useState([])
     const[listOfScoreData,setScoreData]=useState([])
     const [filterCount, setFilterCount] = useState ([])
-    const [filteredMarineList,setFilteredList]=useState([])
+    // const [filteredMarineList,setFilteredList]=useState([])
     const [filter,setFilter]=useState(null)
+
+    const [filteredMarineList, setFilteredList] = useState(listOfMarineInfo);
+
 
     useEffect(() => {
         getMarineInfo()
@@ -51,16 +54,20 @@ const MainContainer = () => {
         setFilteredList(results)
     }
 
+    const handleSelect = (evt) => {
+        const category = evt.target.value;
+        const sortedItems = listOfMarineInfo.filter(item => item.category === category);
+        setFilteredList(sortedItems);
+    };
 
     return (
         <>
-            {/* {console.log(listOfScoreData[0])} */}
             <Router>
                 <Header/>
                 <NavBar/>
                 <Routes>
                     <Route exact path='/' element={<HomePage/>}/>
-                    <Route path='/modules' exact element={<InfoList listOfMarineInfo = {!filter ? listOfMarineInfo:filteredMarineList} filter={filter} changeCounter={changeCounter} filterCount={filterCount} saveFilteredSearch={saveFilteredSearch}/>}/>
+                    <Route path='/modules' exact element={<InfoList handleSelect={handleSelect} listOfMarineInfo = {!filter ? listOfMarineInfo:filteredMarineList} filter={filter} changeCounter={changeCounter} filterCount={filterCount} saveFilteredSearch={saveFilteredSearch}/>}/>
                     <Route path='/quizz' element={<Quizz listOfMarineInfo={listOfMarineInfo} listOfScoreData={listOfScoreData} updateCurrentScore={updateCurrentScore}/>}/>
                 </Routes>
                 

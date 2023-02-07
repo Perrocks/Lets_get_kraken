@@ -14,8 +14,6 @@ const Quizz = ({listOfMarineInfo,listOfScoreData,updateCurrentScore}) => {
             buttonValue="false"
         }
         if(currentQuestion.correct_answer===buttonValue){
-            //increment score
-            // console.log("djasidfaisfb",listOfScoreData[0])
             const newWins=listOfScoreData[0].wins +1
             const newTotalPlayed=listOfScoreData[0].total_played+1
             updateCurrentScore({
@@ -42,6 +40,8 @@ const Quizz = ({listOfMarineInfo,listOfScoreData,updateCurrentScore}) => {
             )
         }
     }
+
+    const [selectedOption, setSelectedOption] = useState(null);
 
     const eachQuestion = listOfMarineInfo.map((item) => {
         const randomInt = () => {
@@ -76,3 +76,7 @@ const Quizz = ({listOfMarineInfo,listOfScoreData,updateCurrentScore}) => {
 }
 
 export default Quizz
+
+
+
+    
