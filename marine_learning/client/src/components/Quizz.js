@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-// import Scores from './Scores'
+import Scores from './Scores'
 
 const Quizz = ({listOfMarineInfo,listOfScoreData,updateCurrentScore}) => {
     console.log("score data",listOfScoreData)
@@ -14,8 +14,6 @@ const Quizz = ({listOfMarineInfo,listOfScoreData,updateCurrentScore}) => {
             buttonValue="false"
         }
         if(currentQuestion.correct_answer===buttonValue){
-            //increment score
-            // console.log("djasidfaisfb",listOfScoreData[0])
             const newWins=listOfScoreData[0].wins +1
             const newTotalPlayed=listOfScoreData[0].total_played+1
             updateCurrentScore({
@@ -80,22 +78,5 @@ const Quizz = ({listOfMarineInfo,listOfScoreData,updateCurrentScore}) => {
 export default Quizz
 
 
-
-// return (
-//     <li key={item.id}>
-//         <p>{item.questions[resultRandomInt].question}</p>
-//         {item.questions[resultRandomInt].options.map((option, index) => (
-//             <label key={option}>
-//                 <input
-//                     type="radio"
-//                     value={option}
-//                     checked={selectedOption === option}
-//                     onChange={() => setSelectedOption(option)}
-//                 />
-//                 {option}
-//             </label>
-//         ))}
-//     </li>
-// );
 
     
