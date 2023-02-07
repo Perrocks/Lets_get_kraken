@@ -24,10 +24,8 @@ const Quizz = ({listOfMarineInfo,listOfScoreData,updateCurrentScore}) => {
                 losses:listOfScoreData[0].losses,
                 total_played:newTotalPlayed
             })
-            // console.log("gets to here")
             return(
-                // <p>Congrats</p>
-                alert("Congrats")
+                alert("Whale done , you got that right!!")
             )
         }
         else{
@@ -40,8 +38,7 @@ const Quizz = ({listOfMarineInfo,listOfScoreData,updateCurrentScore}) => {
                 total_played:newTotalPlayed
             })
             return(
-                alert("You got this wrong, are you sure you read the information?")
-                // <p>You got this wrong, are you sure you read the information?</p>
+                alert("You got this wrong, but dont be crabby")
             )
         }
     }

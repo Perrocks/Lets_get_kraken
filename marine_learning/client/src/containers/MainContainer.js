@@ -4,6 +4,7 @@ import InfoList from '../components/InfoList'
 import { getMarineInfo, getOneMarineItem, updateOneMarineItem } from '../components/MarineService'
 import { getScoreData, updateScore } from '../components/QuizzService'
 import NavBar from '../components/NavBar'
+import Header from '../components/Header'
 import Quizz from '../components/Quizz'
 import HomePage from '../components/HomePage'
 
@@ -55,6 +56,7 @@ const MainContainer = () => {
         <>
             {/* {console.log(listOfScoreData[0])} */}
             <Router>
+                <Header/>
                 <NavBar/>
                 <Routes>
                     <Route exact path='/' element={<HomePage/>}/>
