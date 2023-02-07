@@ -3,11 +3,16 @@ import InfoItem from './InfoItem'
 
 
 
-const InfoList = ({listOfMarineInfo, changeCounter, filterCount,saveFilteredSearch,filter, handleSelect}) => {
+const InfoList = ({listOfMarineInfo, changeCounter, filterCount,saveFilteredSearch,filter, selectFunction}) => {
 
     const handleChange=(evt)=>{
         const filterInput=evt.target.value      
         saveFilteredSearch(filterInput)
+    }
+    const handleSelect=(evt)=>{
+        const category=evt.target.value
+        selectFunction(category)
+
     }
 
     const mappedMarineInfo = listOfMarineInfo.map((item) => {
@@ -22,11 +27,12 @@ const InfoList = ({listOfMarineInfo, changeCounter, filterCount,saveFilteredSear
         </form>
         <form>
             <select onChange={handleSelect}>
-                <option value="">Sort by Category</option>
+                <option value="" disabled selected>Sort by Category</option>
+                <option value="">All Categories</option>
                 <option value="pollutants">Pollutants</option>
                 <option value="marine life">Marine Life</option>
                 <option value="coral reefs">Coral Reefs</option>
-                <option value="habitats"></option>
+                <option value="habitats">Habitats</option>
             </select>
         </form>
         <ul>

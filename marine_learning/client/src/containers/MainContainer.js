@@ -14,7 +14,9 @@ const MainContainer = () => {
     const[listOfScoreData,setScoreData]=useState([])
     const [filterCount, setFilterCount] = useState ([])
     // const [filteredMarineList,setFilteredList]=useState([])
-    const [filter,setFilter]=useState(null)
+    const [filter,setFilter]=useState("")
+    const [selectedCategory,setSelectCategory]=useState("")
+    const [categoryList,setCategoryList]=useState([])
 
     const [filteredMarineList, setFilteredList] = useState(listOfMarineInfo);
 
@@ -50,16 +52,15 @@ const MainContainer = () => {
 
     const saveFilteredSearch=(filteredInput)=>{
         setFilter(filteredInput)
-        const results=listOfMarineInfo.filter(data=>data.name.toLowerCase().includes(filteredInput))
-        setFilteredList(results)
     }
 
-    const handleSelect = (evt) => {
-        const category = evt.target.value;
-        const sortedItems = listOfMarineInfo.filter(item => item.category === category);
-        setFilteredList(sortedItems);
+    const selectFunction = (category) => {
+        const sortCategory=category
+        setSelectCategory(sortCategory)        
     };
 
+    const results=listOfMarineInfo.filter(data=>data.name.toLowerCase().includes(filter)).filter(item => item.category.toLowerCase() === selectedCategory||!selectedCategory)
+    console.log("this is the results",results)
     return (
         <>
             <Router>
@@ -67,7 +68,7 @@ const MainContainer = () => {
                 <NavBar/>
                 <Routes>
                     <Route exact path='/' element={<HomePage/>}/>
-                    <Route path='/modules' exact element={<InfoList handleSelect={handleSelect} listOfMarineInfo = {!filter ? listOfMarineInfo:filteredMarineList} filter={filter} changeCounter={changeCounter} filterCount={filterCount} saveFilteredSearch={saveFilteredSearch}/>}/>
+                    <Route path='/modules' exact element={<InfoList listOfMarineInfo ={results}  filter={filter} changeCounter={changeCounter} filterCount={filterCount} saveFilteredSearch={saveFilteredSearch} selectFunction={selectFunction}/>}/>
                     <Route path='/quizz' element={<Quizz listOfMarineInfo={listOfMarineInfo} listOfScoreData={listOfScoreData} updateCurrentScore={updateCurrentScore}/>}/>
                 </Routes>
                 
@@ -75,5 +76,4 @@ const MainContainer = () => {
         </>
     )
 }
-
 export default MainContainer
