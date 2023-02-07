@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import InfoItem from './InfoItem'
+import './InfoList.css'
 
 
 
@@ -22,11 +23,9 @@ const InfoList = ({listOfMarineInfo, changeCounter, filterCount,saveFilteredSear
 
     return (
         <>
-        <form>
-            <input type="text" placeholder="Search for ..." value={filter} onChange={handleChange}/>
-        </form>
-        <form>
-            <select onChange={handleSelect}>
+        <form id="formId">
+            <input id="inputId" type="text" placeholder="Search for the name" value={filter} onChange={handleChange}/>
+            <select id="selectId" onChange={handleSelect}>
                 <option value="" disabled selected>Sort by Category</option>
                 <option value="">All Categories</option>
                 <option value="pollutants">Pollutants</option>
@@ -35,7 +34,7 @@ const InfoList = ({listOfMarineInfo, changeCounter, filterCount,saveFilteredSear
                 <option value="habitats">Habitats</option>
             </select>
         </form>
-        <ul>
+        <ul id="infoUl">
             {mappedMarineInfo}
         </ul>
         <div>

@@ -62,7 +62,7 @@ const MainContainer = () => {
     const results=listOfMarineInfo.filter(data=>data.name.toLowerCase().includes(filter)).filter(item => item.category.toLowerCase() === selectedCategory||!selectedCategory)
     console.log("this is the results",results)
     return (
-        <>
+        <section>
             <Router>
                 <Header/>
                 <NavBar/>
@@ -73,7 +73,7 @@ const MainContainer = () => {
                 </Routes>
                 
             </Router>
-        </>
+        </section>
     )
 }
 export default MainContainer

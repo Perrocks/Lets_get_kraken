@@ -1,4 +1,7 @@
 import React from 'react'
+import './InfoItem.css'
+// import image1 from './images/Coral_reef.jpeg'
+
 
 const InfoItem = ({item, changeCounter}) => {
 
@@ -20,16 +23,22 @@ const InfoItem = ({item, changeCounter}) => {
     }
 
     return (
-        <li>
-            <p>Category:{item.category} </p>
-            <p>Name:{item.name} </p>
-            <p>Description:{item.description} </p>
-            {item.category==="Pollutants" ? <p>Solutions:{item.threats}</p> : <p>Threats:{item.threats} </p>}
-            <p>Examples:{item.examples} </p>
-            <p>Picture: </p>
-            <p>Further reading: </p>
-            <div>
-                <input type="checkbox" id='checkbox' name='checkbox' checked={item.isChecked} onChange={handleChange}/>
+        <li id="infoLi">
+            <div id="bigDiv">
+                <div>
+                    <h2 id="categoryTitle">{item.category} </h2>
+                    <p><b>Name: </b>{item.name} </p>
+                    <p><b>Description: </b>{item.description} </p>
+                    {item.category==="Pollutants" ? <p><b>Solutions: </b>{item.threats}</p> : <p><b>Threats: </b>{item.threats} </p>}
+                    <p><b>Examples: </b>{item.examples} </p>           
+                    <a href={item.url}>Further reading</a>
+                </div>
+                <div>
+                    <img id="info-image" src={item.picture}/>
+                </div>
+            </div>
+            <div id="checkboxDiv">
+                <input id="checkboxId" type="checkbox" name='checkbox' checked={item.isChecked} onChange={handleChange}/>
                 <label htmlFor='checkbox'>Done!</label>
             </div>
         </li>

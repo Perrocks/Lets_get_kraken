@@ -8,7 +8,7 @@ db.marine_info.insertMany([
         description:"The Green Sea Turtle has an appearance of a typical turtle. They have a beaked head at the end of a short neck, and paddle-like arms well-adapted for swimming. An adult Green Sea Turtle normally grows to about 1.5 metres and on average weighs between 68-190kg. As the name suggests the Green Sea Turtle has a green colour.",
         threats:"Human action presents both intentional and unintentional threats to the species survival. Intentional threats include continued hunting, poaching and egg harvesting. The main unitentional threat comes from pollution and habitat destruction",
         examples:"Atlantic, Pacific, and Indian Oceans",
-        picture:"../images/Green_sea_turtle.jpeg",
+        picture:"/images/Green_sea_turtle.jpeg",
         url:"https://www.worldwildlife.org/species/green-turtle",
         isChecked: false,
         
