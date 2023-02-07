@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react'
-import Scores from './Scores'
+// import Scores from './Scores'
 
 const Quizz = ({listOfMarineInfo}) => {
+
+    const [selectedOption, setSelectedOption] = useState(null);
 
     const eachQuestion = listOfMarineInfo.map((item) => {
         const randomInt = () => {
@@ -13,7 +15,6 @@ const Quizz = ({listOfMarineInfo}) => {
         return (
             <li>
                 <p>{item.questions[resultRandomInt].question}</p>
-                {/* {console.log(item.questions[0], 'csdkchdckh')} */}
             </li>
         )
     })
@@ -22,7 +23,29 @@ const Quizz = ({listOfMarineInfo}) => {
         <ul>
             {eachQuestion}
         </ul>
+        
     )
 }
 
 export default Quizz
+
+
+
+// return (
+//     <li key={item.id}>
+//         <p>{item.questions[resultRandomInt].question}</p>
+//         {item.questions[resultRandomInt].options.map((option, index) => (
+//             <label key={option}>
+//                 <input
+//                     type="radio"
+//                     value={option}
+//                     checked={selectedOption === option}
+//                     onChange={() => setSelectedOption(option)}
+//                 />
+//                 {option}
+//             </label>
+//         ))}
+//     </li>
+// );
+
+    

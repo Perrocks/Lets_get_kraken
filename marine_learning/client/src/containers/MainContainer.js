@@ -11,6 +11,7 @@ const MainContainer = () => {
 const[listOfMarineInfo, setListOfMarineInfo] = useState([])
 const [filterCount, setFilterCount] = useState ([])
 
+
 useEffect(() => {
     getMarineInfo()
     .then((allMarineInfo) =>{
@@ -34,7 +35,6 @@ const changeCounter = (isChecked, item) => {
     return (
         <>
             <Router>
-                {console.log(filterCount)}
                 <NavBar/>
                 <Routes>
                     <Route exact path='/' element={<HomePage/>}/>
