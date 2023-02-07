@@ -1,7 +1,50 @@
 import React, {useState, useEffect} from 'react'
 // import Scores from './Scores'
 
-const Quizz = ({listOfMarineInfo}) => {
+const Quizz = ({listOfMarineInfo,listOfScoreData,updateCurrentScore}) => {
+    console.log("score data",listOfScoreData)
+
+    const handleClick=(currentQuestion,val)=>{
+        console.log("this is the current quest ",currentQuestion)
+        let buttonValue=val
+        if(buttonValue==="true"){
+            buttonValue=true
+        }
+        else{
+            buttonValue="false"
+        }
+        if(currentQuestion.correct_answer===buttonValue){
+            //increment score
+            // console.log("djasidfaisfb",listOfScoreData[0])
+            const newWins=listOfScoreData[0].wins +1
+            const newTotalPlayed=listOfScoreData[0].total_played+1
+            updateCurrentScore({
+                _id:listOfScoreData[0]._id,
+                wins:newWins,
+                losses:listOfScoreData[0].losses,
+                total_played:newTotalPlayed
+            })
+            // console.log("gets to here")
+            return(
+                // <p>Congrats</p>
+                alert("Congrats")
+            )
+        }
+        else{
+            const newLosses=listOfScoreData[0].losses +1
+            const newTotalPlayed=listOfScoreData[0].total_played+1
+            updateCurrentScore({
+                _id:listOfScoreData[0]._id,
+                wins:listOfScoreData[0].wins,
+                losses:newLosses,
+                total_played:newTotalPlayed
+            })
+            return(
+                alert("You got this wrong, are you sure you read the information?")
+                // <p>You got this wrong, are you sure you read the information?</p>
+            )
+        }
+    }
 
     const [selectedOption, setSelectedOption] = useState(null);
 
@@ -12,18 +55,28 @@ const Quizz = ({listOfMarineInfo}) => {
             return Math.trunc(Math.random()*(max - min) + min)
         }
         const resultRandomInt = randomInt()
+        const variableToPassIn=item.questions[resultRandomInt]
         return (
             <li>
                 <p>{item.questions[resultRandomInt].question}</p>
+                {/* {console.log("afhdf",item.questions[resultRandomInt])} */}
+                <button onClick={()=>handleClick(variableToPassIn,'true')}>True</button>
+                <button onClick={()=>handleClick(variableToPassIn,'false')}>False</button>
             </li>
         )
     })
 
+
     return (
-        <ul>
-            {eachQuestion}
-        </ul>
-        
+        <section>
+            <ul>
+                {eachQuestion}
+            </ul>
+            <div>
+                {listOfScoreData.length && <Scores listOfScoreData={listOfScoreData}/>}
+            </div>
+        </section>
+
     )
 }
 

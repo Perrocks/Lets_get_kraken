@@ -1,7 +1,12 @@
 import React, {useState} from 'react'
 import InfoItem from './InfoItem'
 
-const InfoList = ({listOfMarineInfo, changeCounter, filterCount}) => {
+const InfoList = ({listOfMarineInfo, changeCounter, filterCount,saveFilteredSearch,filter}) => {
+
+    const handleChange=(evt)=>{
+        const filterInput=evt.target.value      
+        saveFilteredSearch(filterInput)
+    }
 
     const mappedMarineInfo = listOfMarineInfo.map((item) => {
         return <InfoItem item = {item} key = {item._id} changeCounter={changeCounter}/>
@@ -10,6 +15,9 @@ const InfoList = ({listOfMarineInfo, changeCounter, filterCount}) => {
 
     return (
         <>
+        <form>
+            <input type="text" placeholder="Search for ..." value={filter} onChange={handleChange}/>
+        </form>
         <ul>
             {mappedMarineInfo}
         </ul>

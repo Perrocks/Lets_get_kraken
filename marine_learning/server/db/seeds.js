@@ -663,7 +663,13 @@ db.marine_info.insertMany([
 
 ])
 
-
+db.quizz_score.insertMany([
+    {
+        wins:0,
+        losses:0,
+        total_played:0
+    }
+])
 
 
 

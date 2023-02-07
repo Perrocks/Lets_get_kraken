@@ -2,44 +2,64 @@ import React, {useState, useEffect} from 'react'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom' 
 import InfoList from '../components/InfoList'
 import { getMarineInfo, getOneMarineItem, updateOneMarineItem } from '../components/MarineService'
+import { getScoreData, updateScore } from '../components/QuizzService'
 import NavBar from '../components/NavBar'
 import Quizz from '../components/Quizz'
 import HomePage from '../components/HomePage'
 
 const MainContainer = () => {
 
-const[listOfMarineInfo, setListOfMarineInfo] = useState([])
-const [filterCount, setFilterCount] = useState ([])
+    const[listOfMarineInfo, setListOfMarineInfo] = useState([])
+    const[listOfScoreData,setScoreData]=useState([])
+    const [filterCount, setFilterCount] = useState ([])
+    const [filteredMarineList,setFilteredList]=useState([])
+    const [filter,setFilter]=useState(null)
 
+    useEffect(() => {
+        getMarineInfo()
+        .then((allMarineInfo) =>{
+            setListOfMarineInfo(allMarineInfo)
+            setFilterCount(allMarineInfo.filter(item => item.isChecked === true))
+        })
+        getScoreData()
+        .then((allScoreData)=>{
+            setScoreData(allScoreData)
+        })
+    }, [])
 
-useEffect(() => {
-    getMarineInfo()
-    .then((allMarineInfo) =>{
-        setListOfMarineInfo(allMarineInfo)
-        setFilterCount(allMarineInfo.filter(item => item.isChecked === true))
-    })
-}, [])
+    const changeCounter = (isChecked, item) => {
+        updateOneMarineItem(item)
+        const updateItemIndex = listOfMarineInfo.findIndex(marineItem => marineItem._id === item._id)
+        const updateMarineInfo = [...listOfMarineInfo]
+        updateMarineInfo [updateItemIndex] = item
+        setListOfMarineInfo(updateMarineInfo)
+        const listOfFilteredInfo = updateMarineInfo.filter(item => item.isChecked === true)
+        setFilterCount(listOfFilteredInfo)
+    }
+    const updateCurrentScore=(score)=>{
+        updateScore(score)
+        const updatedScoreIndex=listOfScoreData.findIndex(scoreItem=>scoreItem._id===score._id)
+        const updatedScoreData=[...listOfScoreData]
+        updatedScoreData[updatedScoreIndex]=score
+        setScoreData(updatedScoreData)
+    }
 
-const changeCounter = (isChecked, item) => {
-    updateOneMarineItem(item)
-    const updateItemIndex = listOfMarineInfo.findIndex(marineItem => marineItem._id === item._id)
-    const updateMarineInfo = [...listOfMarineInfo]
-    updateMarineInfo [updateItemIndex] = item
-    setListOfMarineInfo(updateMarineInfo)
-    const listOfFilteredInfo = updateMarineInfo.filter(item => item.isChecked === true)
-    setFilterCount(listOfFilteredInfo)
-}
-
+    const saveFilteredSearch=(filteredInput)=>{
+        setFilter(filteredInput)
+        const results=listOfMarineInfo.filter(data=>data.name.toLowerCase().includes(filteredInput))
+        setFilteredList(results)
+    }
 
 
     return (
         <>
+            {/* {console.log(listOfScoreData[0])} */}
             <Router>
                 <NavBar/>
                 <Routes>
                     <Route exact path='/' element={<HomePage/>}/>
-                    <Route path='/modules' exact element={<InfoList listOfMarineInfo = {listOfMarineInfo} changeCounter={changeCounter} filterCount={filterCount}/>}/>
-                    <Route path='/quizz' element={<Quizz listOfMarineInfo={listOfMarineInfo}/>}/>
+                    <Route path='/modules' exact element={<InfoList listOfMarineInfo = {!filter ? listOfMarineInfo:filteredMarineList} filter={filter} changeCounter={changeCounter} filterCount={filterCount} saveFilteredSearch={saveFilteredSearch}/>}/>
+                    <Route path='/quizz' element={<Quizz listOfMarineInfo={listOfMarineInfo} listOfScoreData={listOfScoreData} updateCurrentScore={updateCurrentScore}/>}/>
                 </Routes>
                 
             </Router>
