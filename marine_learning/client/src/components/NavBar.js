@@ -7,7 +7,7 @@ const NavBar = () => {
             <Link to="/">Home</Link>
         </li>
         <li>
-            <Link to="/modules">Modules</Link>
+            <Link to="/modules">Knowledge Bubbles</Link>
         </li >
     </ul >
     );
