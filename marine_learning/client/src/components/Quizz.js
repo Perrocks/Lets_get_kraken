@@ -49,10 +49,12 @@ const Quizz = ({listOfMarineInfo,listOfScoreData,updateCurrentScore,randomiseVal
     const eachQuestion = listOfMarineInfo.map((item) => {
         const variableToPassIn=item.questions[randomiseValue]
         return (
-            <li>
-                <p>{item.questions[randomiseValue].question}</p>
-                <button onClick={()=>handleClick(variableToPassIn,'true')}>True</button>
-                <button onClick={()=>handleClick(variableToPassIn,'false')}>False</button>
+            <li id='question-li'>
+                <p id='questions-p'>{item.questions[randomiseValue].question}</p>
+                <div id='buttons'>
+                    <button id='button1' onClick={()=>handleClick(variableToPassIn,'true')}>True</button>
+                    <button id='button1' onClick={()=>handleClick(variableToPassIn,'false')}>False</button>
+                </div>
             </li>
         )
     })
@@ -61,11 +63,11 @@ const Quizz = ({listOfMarineInfo,listOfScoreData,updateCurrentScore,randomiseVal
     return (
         <section id='quizz-body'>
             <div id='questions'>
-                <button onClick={handleRefreshClick}>Randomise Questions!</button>
-                <ul>
+                <button className='randomise-button' onClick={handleRefreshClick}>Randomise Questions!</button>
+                <ul id='questions-ul'>
                     {eachQuestion}
                 </ul>
-                <button onClick={handleRefreshClick}>Randomise Questions!</button>
+                <button className='randomise-button' onClick={handleRefreshClick}>Randomise Questions!</button>
             </div>
             <div id='scores'>
                 {listOfScoreData.length && <Scores listOfScoreData={listOfScoreData}/>}
