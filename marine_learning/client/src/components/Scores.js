@@ -1,15 +1,20 @@
 import React from 'react'
+import './Scores.css'
 
 const Scores = ({listOfScoreData}) => {
     console.log(listOfScoreData)
 
     return (
-        <>
-        <h1>Track your progress</h1>
-        <p>Questions you've answered correctly!!: {listOfScoreData[0].wins}</p>
-        <p>Questions you've answered incorrectly: {listOfScoreData[0].losses}</p>
-        <p>Total questions you've answered: {listOfScoreData[0].total_played}</p>
-        </>
+        <div id='scores-body'>
+        <h1 id='title'>Track your progress</h1>
+        <hr id='hr'></hr>
+        <p className='answers'>Questions you've answered correctly:</p>
+        <p className='number'>{listOfScoreData[0].wins}  🐳done!</p>
+        <p className='answers'>Questions you've answered incorrectly:</p> 
+        <p className='number'>{listOfScoreData[0].losses} oh 🦀! </p>
+        <p className='answers'>Total questions you've answered:</p>
+        <p className='number'>{listOfScoreData[0].total_played} !! 🌊</p>
+        </div>
     )
 }
 
