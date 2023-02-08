@@ -60,6 +60,7 @@
     border-radius: 30px;
     transition: 1s;
     box-shadow: -10px 7px 5px navy;
+    margin-bottom: 2%;
 }
 
 .go-to-quizz:hover {
