@@ -34,11 +34,14 @@ const InfoList = ({listOfMarineInfo, changeCounter, filterCount,saveFilteredSear
                     <option value="habitats">Habitats</option>
                 </select>
             </form>
+            <div className='go-to-quizz'>
+                {filterCount.length === 20 ? <a className='link-to-quizz' href='/quizz'>Test your knowledge!</a> : <p>Read all the info to unlock the quiz...!</p>}
+            </div>
             <ul id="infoUl">
                 {mappedMarineInfo}
             </ul>
-            <div>
-                {filterCount.length === 20 ? <a href='/quizz'>Test your knowledge!</a> : <p>Read all the info to unlock the quiz...!</p>}
+            <div className='go-to-quizz'>
+                {filterCount.length === 20 ? <a className='link-to-quizz' href='/quizz'>Test your knowledge!</a> : <p>Read all the info to unlock the quiz...!</p>}
             </div>
         </section>
     )
