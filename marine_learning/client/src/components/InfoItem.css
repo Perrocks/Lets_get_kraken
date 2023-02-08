@@ -1,9 +1,9 @@
 #infoLi{
-    border:solid 2px black;
+    border:solid 8px rgb(133, 75, 241);
     border-radius: 15px;
     padding:10px;
     margin:15px;
-    background-color: aliceblue;
+    background-color: rgb(24, 179, 240);
 }
 #checkboxDiv{
     display:flex;
@@ -20,7 +20,7 @@
 #info-image{
     width:400px;
     height:350px;
-    border:solid 2px black;
+    border:solid 4px black;
     border-radius:30px;
 
 }
