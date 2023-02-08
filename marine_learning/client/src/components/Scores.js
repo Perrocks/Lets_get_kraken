@@ -6,7 +6,7 @@ const Scores = ({listOfScoreData}) => {
 
     return (
         <div id='scores-body'>
-        <h1 id='title'>Track your progress</h1>
+        <h2 id='title'>Track your progress</h2>
         <hr id='hr'></hr>
         <p className='answers'>Questions you've answered correctly:</p>
         <p className='number'>{listOfScoreData[0].wins}  🐳done!</p>
