@@ -1,6 +1,5 @@
 import React from 'react'
 import './InfoItem.css'
-// import image1 from './images/Coral_reef.jpeg'
 
 
 const InfoItem = ({item, changeCounter}) => {

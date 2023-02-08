@@ -1,8 +1,5 @@
 .App {
-  /* text-align: center; */
-  /* background-color: rgb(0, 60, 255); */
-  background-image: url('y.avif');
-  background-size: cover;
+  /* position: fixed; */
 }
 
 .App-logo {

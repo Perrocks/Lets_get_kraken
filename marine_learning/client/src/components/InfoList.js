@@ -22,28 +22,25 @@ const InfoList = ({listOfMarineInfo, changeCounter, filterCount,saveFilteredSear
 
 
     return (
-        <>
-        <form id="formId">
-            <input id="inputId" type="text" placeholder="Search for the name" value={filter} onChange={handleChange}/>
-            <select id="selectId" onChange={handleSelect}>
-                <option value="" disabled selected>Sort by Category</option>
-                <option value="">All Categories</option>
-                <option value="pollutants">Pollutants</option>
-                <option value="marine life">Marine Life</option>
-                <option value="coral reefs">Coral Reefs</option>
-                <option value="habitats">Habitats</option>
-            </select>
-        </form>
-        <ul id="infoUl">
-            {mappedMarineInfo}
-        </ul>
-        <div>
-            {filterCount.length === 20 ? <a href='/quizz'>Test your knowledge!</a> : <p>Read all the info to unlock the quiz...!</p>}
-        </div>
-
-        
-        
-        </>
+        <section id='body-list'>
+            <form id="formId">
+                <input id="inputId" type="text" placeholder="Search for the name" value={filter} onChange={handleChange}/>
+                <select id="selectId" onChange={handleSelect}>
+                    <option value="" disabled selected>Sort by Category</option>
+                    <option value="">All Categories</option>
+                    <option value="pollutants">Pollutants</option>
+                    <option value="marine life">Marine Life</option>
+                    <option value="coral reefs">Coral Reefs</option>
+                    <option value="habitats">Habitats</option>
+                </select>
+            </form>
+            <ul id="infoUl">
+                {mappedMarineInfo}
+            </ul>
+            <div>
+                {filterCount.length === 20 ? <a href='/quizz'>Test your knowledge!</a> : <p>Read all the info to unlock the quiz...!</p>}
+            </div>
+        </section>
     )
 }
 

@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Scores from './Scores'
+import './Quizz.css'
 
 const Quizz = ({listOfMarineInfo,listOfScoreData,updateCurrentScore,randomiseValue,randomInt}) => {
 
@@ -58,13 +59,15 @@ const Quizz = ({listOfMarineInfo,listOfScoreData,updateCurrentScore,randomiseVal
 
 
     return (
-        <section>
-            <button onClick={handleRefreshClick}>Randomise Questions!</button>
-            <ul>
-                {eachQuestion}
-            </ul>
-            <button onClick={handleRefreshClick}>Randomise Questions!</button>
-            <div>
+        <section id='quizz-body'>
+            <div id='questions'>
+                <button onClick={handleRefreshClick}>Randomise Questions!</button>
+                <ul>
+                    {eachQuestion}
+                </ul>
+                <button onClick={handleRefreshClick}>Randomise Questions!</button>
+            </div>
+            <div id='scores'>
                 {listOfScoreData.length && <Scores listOfScoreData={listOfScoreData}/>}
                 
             </div>
