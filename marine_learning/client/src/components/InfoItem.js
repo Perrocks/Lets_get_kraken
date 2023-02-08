@@ -29,8 +29,9 @@ const InfoItem = ({item, changeCounter}) => {
                     <p><b>Name: </b>{item.name} </p>
                     <p><b>Description: </b>{item.description} </p>
                     {item.category==="Pollutants" ? <p><b>Solutions: </b>{item.threats}</p> : <p><b>Threats: </b>{item.threats} </p>}
-                    <p><b>Examples: </b>{item.examples} </p>           
-                    <a href={item.url}>Further reading</a>
+                    <p><b>Examples: </b>{item.examples} </p>   
+                    <br></br>        
+                    <a id='link-style' href={item.url} target='blank'>  🔎 Further reading</a>
                 </div>
                 <div>
                     <img id="info-image" src={item.picture}/>

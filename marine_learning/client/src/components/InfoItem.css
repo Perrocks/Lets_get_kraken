@@ -34,6 +34,16 @@
     width:100px;
 }
 
-.text-link-to-quizz{
+#link-style{
+    text-decoration: none;
+    font-size: 22px;
+    color:  rgb(41, 51, 236);
+    
+}
+
+#link-style:hover{
+    text-decoration: none;
+    font-size: 25.9px;
+    color: red;
     
 }
