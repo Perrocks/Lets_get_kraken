@@ -8,6 +8,7 @@ import Header from '../components/Header'
 import Quizz from '../components/Quizz'
 import HomePage from '../components/HomePage'
 
+
 const MainContainer = () => {
 
     const[listOfMarineInfo, setListOfMarineInfo] = useState([])
@@ -66,7 +67,7 @@ const MainContainer = () => {
 
     const results=listOfMarineInfo.filter(data=>data.name.toLowerCase().includes(filter)).filter(item => item.category.toLowerCase() === selectedCategory||!selectedCategory)
     return (
-        <section>
+        <section id='main-container'>
             <Router>
                 <Header/>
                 <NavBar/>
