@@ -1,0 +1,18 @@
+#home-page-body {
+    background-color: aqua;
+    display:flex;
+    flex-direction: column;
+    border-radius: 15px;
+    border: 2px solid black;
+    margin: 2rem;
+    padding: 2rem;
+    text-align: center;
+
+}
+
+#section-body{
+    background-color: rgb(39, 144, 255);
+    padding: 50px;
+    margin-top: -16px;
+    padding-bottom: 165px;
+}

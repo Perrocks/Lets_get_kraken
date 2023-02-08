@@ -4,6 +4,7 @@ import './InfoList.css'
 
 
 
+
 const InfoList = ({listOfMarineInfo, changeCounter, filterCount,saveFilteredSearch,filter, selectFunction}) => {
 
     const handleChange=(evt)=>{
