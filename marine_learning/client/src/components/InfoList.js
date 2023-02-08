@@ -23,6 +23,9 @@ const InfoList = ({listOfMarineInfo, changeCounter, filterCount,saveFilteredSear
 
     return (
         <section id='body-list'>
+            <div className='go-to-quizz'>
+                {filterCount.length === 20 ? <a className='link-to-quizz' href='/quizz'>Test your knowledge!</a> : <p className='text-link-to-quizz'>Read all the info to unlock the quiz...!</p>}
+            </div>
             <form id="formId">
                 <input id="inputId" type="text" placeholder="Search for the name" value={filter} onChange={handleChange}/>
                 <select id="selectId" onChange={handleSelect}>
@@ -34,14 +37,11 @@ const InfoList = ({listOfMarineInfo, changeCounter, filterCount,saveFilteredSear
                     <option value="habitats">Habitats</option>
                 </select>
             </form>
-            <div className='go-to-quizz'>
-                {filterCount.length === 20 ? <a className='link-to-quizz' href='/quizz'>Test your knowledge!</a> : <p>Read all the info to unlock the quiz...!</p>}
-            </div>
             <ul id="infoUl">
                 {mappedMarineInfo}
             </ul>
             <div className='go-to-quizz'>
-                {filterCount.length === 20 ? <a className='link-to-quizz' href='/quizz'>Test your knowledge!</a> : <p>Read all the info to unlock the quiz...!</p>}
+                {filterCount.length === 20 ? <a className='link-to-quizz' href='/quizz'>Test your knowledge!</a> : <p className='text-link-to-quizz'>Read all the info to unlock the quiz...!</p>}
             </div>
         </section>
     )
