@@ -2,7 +2,6 @@ import React from 'react'
 import './Scores.css'
 
 const Scores = ({listOfScoreData}) => {
-    console.log(listOfScoreData)
 
     return (
         <div id='scores-body'>

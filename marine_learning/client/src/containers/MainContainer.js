@@ -10,6 +10,7 @@ import HomePage from '../components/HomePage'
 
 
 const MainContainer = () => {
+    console.log('krak-rators: Indira BG , John P, Laura McG, Liam K')
 
     const[listOfMarineInfo, setListOfMarineInfo] = useState([])
     const[listOfScoreData,setScoreData]=useState([])
