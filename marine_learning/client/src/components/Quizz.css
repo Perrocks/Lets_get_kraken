@@ -10,10 +10,11 @@
 #scores{
     margin-top: 9%;
     margin-right: 10%;
-    margin-bottom: 4280px;
-    position: sticky;
+    /* margin-bottom: 4280px; */
+    height: 550px; /* <-- THIS allowed us to do sticky! */
     top:0;
     position: -webkit-sticky;
+    position: sticky;
     background-color: rgba(46, 161, 243, 0.672);
     border-radius: 60px;
     border: 30px Solid rgba(238, 242, 240, 0.511);

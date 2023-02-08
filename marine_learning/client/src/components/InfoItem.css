@@ -18,9 +18,10 @@
     grid-column-gap:70px;
 }
 #info-image{
+    box-shadow: -10px 7px 5px navy;
     width:400px;
     height:350px;
-    border:solid 4px black;
+    border:solid 4px rgba(4, 4, 4, 0.887);
     border-radius:30px;
 
 }
