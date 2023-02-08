@@ -13,7 +13,7 @@ const Quizz = ({listOfMarineInfo,listOfScoreData,updateCurrentScore,randomiseVal
             buttonValue=true
         }
         else{
-            buttonValue="false"
+            buttonValue=false
         }
         if(currentQuestion.correct_answer===buttonValue){
             const newWins=listOfScoreData[0].wins +1
