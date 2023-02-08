@@ -503,7 +503,7 @@ db.marine_info.insertMany([
         threats:"Threats that kelp forests face include over harvesting by humans, pollution and climate change. All of these things negatively effect kelp reproduction",
         examples:"Macrocystis, Laminaria, Ecklonia",
         picture:"../images/Kelp_forrest.webp",
-        url:"",
+        url:"https://oceanservice.noaa.gov/facts/kelp.html",
         isChecked: false,
         questions:[
             {
@@ -536,7 +536,7 @@ db.marine_info.insertMany([
         threats:"The intense harvesting of oysters, pollution and disease has impacted oyster reef habitats. It is estimated that 85% of the Earth’s oyster reefs have been lost. Without this valuable habitat, marine life declines, shorelines erode and marshes are no longer protected",
         examples:"Anomiidae, Dimyidae, Ostreidae",
         picture:"../images/Oyster_reef.jpeg",
-        url:"",
+        url:"https://www.fisheries.noaa.gov/national/habitat-conservation/oyster-reef-habitat",
         isChecked: false,
         questions:[
             {
@@ -569,7 +569,7 @@ db.marine_info.insertMany([
         threats:"Seagrasses need clean water and sunlight to thrive. Nitrogen and phosphorous from sewage treatment plants, streets and farms can pollute coastal waters and cause blooms of algae that deprive seagrasses of light and clean water. Dredging and shoreline development also damage seagrass habitat",
         examples:"Eelgrass, Turtles grass, Tape grass",
         picture:"../images/Seagrass_meadow.webp",
-        url:"",
+        url:"https://kids.frontiersin.org/articles/10.3389/frym.2018.00002",
         isChecked: false,
         questions:[
             {
@@ -602,7 +602,7 @@ db.marine_info.insertMany([
         threats:"The main impacts on the epipelagic zone include shipping, over fishing, plastic pollution and climate change.",
         examples:"Plankton, whales, dolphins",
         picture:"../images/Epipelagic_zone.jpeg",
-        url:"",
+        url:"https://www.britannica.com/science/epipelagic-zone",
         isChecked: false,
         questions:[
             {
@@ -635,7 +635,7 @@ db.marine_info.insertMany([
         threats:"While it may seem unlikely that humans could effect somewhere so unreachable, evidence has been found of plastic pollution at these depths.",
         examples:"Caulophrynidae, Colossal squid",
         picture:"../images/Abbysopelagic_zone.webp",
-        url:"",
+        url:"https://www.britannica.com/science/abyssal-zone",
         isChecked: false,
         questions:[
             {
