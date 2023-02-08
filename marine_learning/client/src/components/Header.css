@@ -11,3 +11,10 @@ h1{
     padding:2px;
     background-color: rgb(24, 179, 240);
 }
+
+#floating-kraken{
+    display: flex;
+    margin-left: 80%;
+    margin-top: -200px;
+    height: 180px;
+}

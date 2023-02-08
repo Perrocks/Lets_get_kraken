@@ -1,12 +1,14 @@
 import './Header.css';
+import kraken from '../kraken.png'
 
 const Header =()=>{
+
 
 
     return(
         <div className='content'>
             <h1>Let's get Kraken!</h1>
-            {/* <h2>Let's get Kraken!</h2> */}
+            <img id='floating-kraken' src={kraken}/>
         </div>
     
     )
