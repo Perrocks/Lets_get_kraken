@@ -16,9 +16,7 @@ const MainContainer = () => {
     // const [filteredMarineList,setFilteredList]=useState([])
     const [filter,setFilter]=useState("")
     const [selectedCategory,setSelectCategory]=useState("")
-    const [categoryList,setCategoryList]=useState([])
-
-    const [filteredMarineList, setFilteredList] = useState(listOfMarineInfo);
+    const [randomiseValue,setRandomiseValue]=useState(0)
 
 
     useEffect(() => {
@@ -59,8 +57,14 @@ const MainContainer = () => {
         setSelectCategory(sortCategory)        
     };
 
+    const randomInt = () => {
+        const min = 1
+        const max = 3
+        const randomNum= Math.trunc(Math.random()*(max - min) + min)
+        setRandomiseValue(randomNum)
+    }
+
     const results=listOfMarineInfo.filter(data=>data.name.toLowerCase().includes(filter)).filter(item => item.category.toLowerCase() === selectedCategory||!selectedCategory)
-    console.log("this is the results",results)
     return (
         <section>
             <Router>
@@ -69,7 +73,7 @@ const MainContainer = () => {
                 <Routes>
                     <Route exact path='/' element={<HomePage/>}/>
                     <Route path='/modules' exact element={<InfoList listOfMarineInfo ={results}  filter={filter} changeCounter={changeCounter} filterCount={filterCount} saveFilteredSearch={saveFilteredSearch} selectFunction={selectFunction}/>}/>
-                    <Route path='/quizz' element={<Quizz listOfMarineInfo={listOfMarineInfo} listOfScoreData={listOfScoreData} updateCurrentScore={updateCurrentScore}/>}/>
+                    <Route path='/quizz' element={<Quizz listOfMarineInfo={listOfMarineInfo} listOfScoreData={listOfScoreData} updateCurrentScore={updateCurrentScore} randomiseValue={randomiseValue} randomInt={randomInt}/>}/>
                 </Routes>
                 
             </Router>

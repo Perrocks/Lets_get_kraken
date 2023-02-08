@@ -1,11 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import Scores from './Scores'
 
-const Quizz = ({listOfMarineInfo,listOfScoreData,updateCurrentScore}) => {
-    console.log("score data",listOfScoreData)
+const Quizz = ({listOfMarineInfo,listOfScoreData,updateCurrentScore,randomiseValue,randomInt}) => {
+
+    const handleRefreshClick = ()=>{
+        randomInt()
+    }
 
     const handleClick=(currentQuestion,val)=>{
-        console.log("this is the current quest ",currentQuestion)
         let buttonValue=val
         if(buttonValue==="true"){
             buttonValue=true
@@ -44,17 +46,10 @@ const Quizz = ({listOfMarineInfo,listOfScoreData,updateCurrentScore}) => {
     const [selectedOption, setSelectedOption] = useState(null);
 
     const eachQuestion = listOfMarineInfo.map((item) => {
-        const randomInt = () => {
-            const min = 0
-            const max = 3
-            return Math.trunc(Math.random()*(max - min) + min)
-        }
-        const resultRandomInt = randomInt()
-        const variableToPassIn=item.questions[resultRandomInt]
+        const variableToPassIn=item.questions[randomiseValue]
         return (
             <li>
-                <p>{item.questions[resultRandomInt].question}</p>
-                {/* {console.log("afhdf",item.questions[resultRandomInt])} */}
+                <p>{item.questions[randomiseValue].question}</p>
                 <button onClick={()=>handleClick(variableToPassIn,'true')}>True</button>
                 <button onClick={()=>handleClick(variableToPassIn,'false')}>False</button>
             </li>
@@ -64,12 +59,16 @@ const Quizz = ({listOfMarineInfo,listOfScoreData,updateCurrentScore}) => {
 
     return (
         <section>
+            <button onClick={handleRefreshClick}>Randomise Questions!</button>
             <ul>
                 {eachQuestion}
             </ul>
+            <button onClick={handleRefreshClick}>Randomise Questions!</button>
             <div>
                 {listOfScoreData.length && <Scores listOfScoreData={listOfScoreData}/>}
+                
             </div>
+
         </section>
 
     )
