@@ -24,6 +24,10 @@
 }
 
 #questions {
+    display:grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    justify-content: center;
     margin-left: 10%;
     margin-top: 6%;
     margin-bottom: 1280px;
@@ -78,7 +82,17 @@
 }
 
 .randomise-button {
-    display: flex;
-    margin-left: 43%
+    font-family: 'Happy Monkey', 'Sans Serif';
+    font-size: 25px;
+    width: fit-content;
+    padding: 5px;
+    border-radius: 10px;
+    border: 3px solid rgb(241, 241, 245);
+    background-color: rgb(244, 227, 165);
+    margin-left: 35%;
+}
 
+.randomise-button:hover {
+    background-color: fuchsia;
+    color: white;
 }

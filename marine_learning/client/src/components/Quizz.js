@@ -26,7 +26,8 @@ const Quizz = ({listOfMarineInfo,listOfScoreData,updateCurrentScore,randomiseVal
                 total_played:newTotalPlayed
             })
             return(
-                alert("Whale done , you got that right!!")
+                null
+                // alert("Whale done , you got that right!!")
             )
         }
         else{
@@ -39,7 +40,8 @@ const Quizz = ({listOfMarineInfo,listOfScoreData,updateCurrentScore,randomiseVal
                 total_played:newTotalPlayed
             })
             return(
-                alert("You got this wrong, but dont be crabby")
+                null
+                // alert("You got this wrong, but dont be crabby")
             )
         }
     }
