@@ -10,7 +10,22 @@
     height:50px;
     vertical-align: center;
 }
+
+#navUl a {
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(41, 51, 236);
+    font-weight: bold;
+}
+
+#navUl a:hover {
+    color: rgb(250, 250, 250);
+    font-size: 22px;
+}
+
+
 .navLi{
     margin-top: 15px;
     vertical-align: center;
+
 }
