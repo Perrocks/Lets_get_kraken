@@ -2,7 +2,7 @@
   "name": "marine_learning",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Laufley.github.io/<Marine_Life_Learning_App>",
+  "homepage": "https://Laufley.github.io/<marine_learning>",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
